@@ -2,8 +2,8 @@
 title: 快陪练学习文档
 home: true
 heroImage: /img/logo.png
-actionText: 加入我们
-actionLink: /job/
+actionText: 开始学习
+actionLink: /js/1
 features:
 - title: 正直
   details: 热爱并践行优秀中文传统文化，常年组织和参与各种公益活动！
