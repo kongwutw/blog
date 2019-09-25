@@ -31,6 +31,10 @@ module.exports = {
         text: '常用网址',
         link: '/url/fe'
       },
+      {
+        text: 'github',
+        link: 'https://github.com/kongwutw/'
+      },
     ],
     sidebar: {
       '/fe/': genSidebarConfig('大前端教程', ['vue', 'VueRouter', 'vuex',  'linux', 'vscode', 'node', 'code', 'suanfa', 'ngnix', 'pm2']),
