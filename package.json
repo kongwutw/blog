@@ -1,0 +1,19 @@
+{
+  "name": "kpl-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vuepress dev src",
+    "pd": "npm run pp && npm run pb && npm run pc",
+    "pp": "git reset --hard && git pull && npm install",
+    "pc": "git add . && git commit -m 'deploy' && git push",
+    "pb": "rm -rf docs && vuepress build src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.0.3"
+  }
+}
