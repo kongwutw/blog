@@ -14,6 +14,7 @@ module.exports = {
       {
         text: '教程',
         items: [
+          { text: '全栈入门', link: '/static/1_1' },
           { text: 'JS入门', link: '/js/1' },
           { text: '前端进阶', link: '/fe/vue' },
         ]
@@ -39,6 +40,7 @@ module.exports = {
     sidebar: {
       '/fe/': genSidebarConfig('大前端教程', ['vue', 'VueRouter', 'vuex',  'linux', 'vscode', 'node', 'code', 'suanfa', 'ngnix', 'pm2']),
       '/js/': genSidebarConfig('JS入门', ['1']),
+      '/static/': genSidebarConfig('全栈入门',  ['1_1', '1_2', '1_3', '2_1', '2_2', '3_1', '3_2', '3_3', '4_1', '4_2', '4_3', '5_1', '5_2', '5_3', '6_1','6_2', '6_3']),
     }
   }
 }
