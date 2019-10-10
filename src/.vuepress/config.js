@@ -29,6 +29,13 @@ module.exports = {
         ]
       },
       {
+        text: '修身',
+        items: [
+          { text: '曾国藩戒色修身', link: '/xs/zgf'},
+          { text: '国外色情危害研究', link: '/xs/sqwh'},
+        ]
+      },
+      {
         text: '常用网址',
         link: '/url/fe'
       },
@@ -38,8 +45,8 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/fe/': genSidebarConfig('大前端教程', ['vue', 'VueRouter', 'vuex',  'linux', 'vscode', 'node', 'code', 'suanfa', 'ngnix', 'pm2']),
-      '/js/': genSidebarConfig('JS入门', ['1', '2', '3', '4', '5', '6']),
+      '/fe/': genSidebarConfig('大前端教程', ['vue', 'VueRouter', 'vuex',  'linux', 'vscode', 'node', 'code', 'suanfa', 'ngnix', 'pm2', 'ssh']),
+      '/js/': genSidebarConfig('JS入门', ['1', '2', '3', '4', '5', '6', '7']),
       '/static/': genSidebarConfig('全栈入门',  ['1_1', '1_2', '1_3', '2_1', '2_2', '3_1', '3_2', '3_3', '4_1', '4_2', '4_3', '5_1', '5_2', '5_3', '6_1','6_2', '6_3']),
     }
   }
