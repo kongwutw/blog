@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>js 基础面试题 | 空无的博客</title>
+    <meta name="description" content="让全栈编程更容易！">
+    <link rel="icon" href="favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.1274d17f.css" as="style"><link rel="preload" href="/blog/assets/js/app.5e992f5b.js" as="script"><link rel="preload" href="/blog/assets/js/2.080f5a6f.js" as="script"><link rel="preload" href="/blog/assets/js/28.24344a81.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.91b91ed0.js"><link rel="prefetch" href="/blog/assets/js/11.c457a506.js"><link rel="prefetch" href="/blog/assets/js/12.5cd70701.js"><link rel="prefetch" href="/blog/assets/js/13.908c619a.js"><link rel="prefetch" href="/blog/assets/js/14.72108ab5.js"><link rel="prefetch" href="/blog/assets/js/15.822f83fa.js"><link rel="prefetch" href="/blog/assets/js/16.8822a6fe.js"><link rel="prefetch" href="/blog/assets/js/17.029adf3b.js"><link rel="prefetch" href="/blog/assets/js/18.a1ae4a41.js"><link rel="prefetch" href="/blog/assets/js/19.5758c94c.js"><link rel="prefetch" href="/blog/assets/js/20.2df66b6c.js"><link rel="prefetch" href="/blog/assets/js/21.5dee5924.js"><link rel="prefetch" href="/blog/assets/js/22.493c326c.js"><link rel="prefetch" href="/blog/assets/js/23.fbd5bd84.js"><link rel="prefetch" href="/blog/assets/js/24.2081db64.js"><link rel="prefetch" href="/blog/assets/js/25.a8729ff7.js"><link rel="prefetch" href="/blog/assets/js/26.1f39a995.js"><link rel="prefetch" href="/blog/assets/js/27.e2461ad7.js"><link rel="prefetch" href="/blog/assets/js/29.b86b7696.js"><link rel="prefetch" href="/blog/assets/js/3.34559ec9.js"><link rel="prefetch" href="/blog/assets/js/30.295ad977.js"><link rel="prefetch" href="/blog/assets/js/31.22f3ab34.js"><link rel="prefetch" href="/blog/assets/js/32.768c893d.js"><link rel="prefetch" href="/blog/assets/js/33.81fa760b.js"><link rel="prefetch" href="/blog/assets/js/34.bf3a3284.js"><link rel="prefetch" href="/blog/assets/js/35.32ced740.js"><link rel="prefetch" href="/blog/assets/js/36.7bbfa17b.js"><link rel="prefetch" href="/blog/assets/js/37.f03e84d3.js"><link rel="prefetch" href="/blog/assets/js/38.7ca71d06.js"><link rel="prefetch" href="/blog/assets/js/39.c56d8512.js"><link rel="prefetch" href="/blog/assets/js/4.e2e0255b.js"><link rel="prefetch" href="/blog/assets/js/40.92755237.js"><link rel="prefetch" href="/blog/assets/js/41.0296bd60.js"><link rel="prefetch" href="/blog/assets/js/42.b5af62a5.js"><link rel="prefetch" href="/blog/assets/js/43.189f353b.js"><link rel="prefetch" href="/blog/assets/js/44.f80c1f2c.js"><link rel="prefetch" href="/blog/assets/js/45.1e621331.js"><link rel="prefetch" href="/blog/assets/js/46.71c0c4ce.js"><link rel="prefetch" href="/blog/assets/js/47.e3d96a60.js"><link rel="prefetch" href="/blog/assets/js/48.70ffe7ee.js"><link rel="prefetch" href="/blog/assets/js/49.3118b0aa.js"><link rel="prefetch" href="/blog/assets/js/5.a62c2cf9.js"><link rel="prefetch" href="/blog/assets/js/50.ec05dea9.js"><link rel="prefetch" href="/blog/assets/js/51.6ca98ccc.js"><link rel="prefetch" href="/blog/assets/js/52.3d4f7552.js"><link rel="prefetch" href="/blog/assets/js/53.4ec7cbe1.js"><link rel="prefetch" href="/blog/assets/js/54.a16ac2d6.js"><link rel="prefetch" href="/blog/assets/js/55.1e7efe5d.js"><link rel="prefetch" href="/blog/assets/js/56.35205971.js"><link rel="prefetch" href="/blog/assets/js/57.2b8f9b1a.js"><link rel="prefetch" href="/blog/assets/js/58.fb8f5d0c.js"><link rel="prefetch" href="/blog/assets/js/59.a9322a05.js"><link rel="prefetch" href="/blog/assets/js/6.1dd38c04.js"><link rel="prefetch" href="/blog/assets/js/60.0496db03.js"><link rel="prefetch" href="/blog/assets/js/61.04df3a65.js"><link rel="prefetch" href="/blog/assets/js/62.1d8f69e7.js"><link rel="prefetch" href="/blog/assets/js/63.f1474a47.js"><link rel="prefetch" href="/blog/assets/js/64.2fa79f2f.js"><link rel="prefetch" href="/blog/assets/js/65.dc48f604.js"><link rel="prefetch" href="/blog/assets/js/66.a1b94df0.js"><link rel="prefetch" href="/blog/assets/js/67.3cd13115.js"><link rel="prefetch" href="/blog/assets/js/68.53e605ba.js"><link rel="prefetch" href="/blog/assets/js/69.60f4a93d.js"><link rel="prefetch" href="/blog/assets/js/7.1eac483a.js"><link rel="prefetch" href="/blog/assets/js/70.4cab6790.js"><link rel="prefetch" href="/blog/assets/js/8.c991fd26.js"><link rel="prefetch" href="/blog/assets/js/9.bc8b1c0b.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.1274d17f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">空无的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">教程</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/static/1_1.html" class="nav-link">全栈入门</a></li><li class="dropdown-item"><!----> <a href="/blog/js/1.html" class="nav-link">JS入门</a></li><li class="dropdown-item"><!----> <a href="/blog/dd/1-3.html" class="nav-link">JS高级导读</a></li><li class="dropdown-item"><!----> <a href="/blog/fe/vue.html" class="nav-link">前端进阶</a></li><li class="dropdown-item"><!----> <a href="/blog/job/sf.html" class="nav-link">带你面试</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">实战分享</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/share/env.html" class="nav-link">开发环境配置参考</a></li><li class="dropdown-item"><!----> <a href="/blog/share/ssr.html" class="nav-link">vue服务端渲染</a></li><li class="dropdown-item"><!----> <a href="/blog/share/mp.html" class="nav-link">小程序开发总结</a></li><li class="dropdown-item"><!----> <a href="/blog/share/iris.html" class="nav-link">go+vue前后端分离实战</a></li><li class="dropdown-item"><!----> <a href="/blog/share/uni.html" class="nav-link">uni-app多端开发回顾</a></li><li class="dropdown-item"><!----> <a href="/blog/share/koa.html" class="nav-link">koa+vue全栈开发实战</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">修身</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/xs/zgf.html" class="nav-link">曾国藩戒色修身</a></li><li class="dropdown-item"><!----> <a href="/blog/xs/skbj.html" class="nav-link">从寿康宝鉴学戒色修身</a></li><li class="dropdown-item"><!----> <a href="/blog/xs/sqwh.html" class="nav-link">国外色情危害研究</a></li></ul></div></div><div class="nav-item"><a href="/blog/url/fe.html" class="nav-link">常用网址</a></div><div class="nav-item"><a href="https://github.com/kongwutw/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">教程</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/static/1_1.html" class="nav-link">全栈入门</a></li><li class="dropdown-item"><!----> <a href="/blog/js/1.html" class="nav-link">JS入门</a></li><li class="dropdown-item"><!----> <a href="/blog/dd/1-3.html" class="nav-link">JS高级导读</a></li><li class="dropdown-item"><!----> <a href="/blog/fe/vue.html" class="nav-link">前端进阶</a></li><li class="dropdown-item"><!----> <a href="/blog/job/sf.html" class="nav-link">带你面试</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">实战分享</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/share/env.html" class="nav-link">开发环境配置参考</a></li><li class="dropdown-item"><!----> <a href="/blog/share/ssr.html" class="nav-link">vue服务端渲染</a></li><li class="dropdown-item"><!----> <a href="/blog/share/mp.html" class="nav-link">小程序开发总结</a></li><li class="dropdown-item"><!----> <a href="/blog/share/iris.html" class="nav-link">go+vue前后端分离实战</a></li><li class="dropdown-item"><!----> <a href="/blog/share/uni.html" class="nav-link">uni-app多端开发回顾</a></li><li class="dropdown-item"><!----> <a href="/blog/share/koa.html" class="nav-link">koa+vue全栈开发实战</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">修身</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/xs/zgf.html" class="nav-link">曾国藩戒色修身</a></li><li class="dropdown-item"><!----> <a href="/blog/xs/skbj.html" class="nav-link">从寿康宝鉴学戒色修身</a></li><li class="dropdown-item"><!----> <a href="/blog/xs/sqwh.html" class="nav-link">国外色情危害研究</a></li></ul></div></div><div class="nav-item"><a href="/blog/url/fe.html" class="nav-link">常用网址</a></div><div class="nav-item"><a href="https://github.com/kongwutw/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>如何面试</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/job/sf.html" class="sidebar-link">js 开发面试常考基础算法题</a></li><li><a href="/blog/job/html.html" class="sidebar-link">HTML 基础知识</a></li><li><a href="/blog/job/css.html" class="sidebar-link">CSS 常见面试基础题</a></li><li><a href="/blog/job/js.html" class="active sidebar-link">js 基础面试题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/job/js.html#_1-js中使用typeof能得到哪些类型？" class="sidebar-link">1 js中使用typeof能得到哪些类型？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_2-js中有哪些内置函数？" class="sidebar-link">2 js中有哪些内置函数？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_3-和-之间的区别？" class="sidebar-link">3 ==和===之间的区别？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_4-2-2-2-和-2-2-2的结果？" class="sidebar-link">4 2 + 2 + '2' 和 '2' + 2 + 2的结果？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_5-如何准确判断一个变量是数组类型" class="sidebar-link">5 如何准确判断一个变量是数组类型</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_6-split-和-join-的区别" class="sidebar-link">6 split() 和 join() 的区别?</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_7-this几种不同的使用场景？" class="sidebar-link">7 this几种不同的使用场景？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_8-break和continue语句的作用？" class="sidebar-link">8 break和continue语句的作用？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_9-如何理解json？" class="sidebar-link">9 如何理解JSON？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_10-函数声明与函数表达式的区别？" class="sidebar-link">10 函数声明与函数表达式的区别？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_11-javascript中定时器" class="sidebar-link">11 JavaScript中定时器?</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_12" class="sidebar-link">12</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_13-js中的继承有哪些？" class="sidebar-link">13 js中的继承有哪些？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_14-请谈谈组合继承及写一个例子？" class="sidebar-link">14 请谈谈组合继承及写一个例子？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_15-下面三段程序的结果是？" class="sidebar-link">15 下面三段程序的结果是？</a></li><li class="sidebar-sub-header"><a href="/blog/job/js.html#_16-下面这段程序的结果是？" class="sidebar-link">16 下面这段程序的结果是？</a></li></ul></li><li><a href="/blog/job/bom.html" class="sidebar-link">web开发 浏览器常见面试题</a></li><li><a href="/blog/job/node.html" class="sidebar-link">js 后端开发基础面试题</a></li><li><a href="/blog/job/vue.html" class="sidebar-link">vue 必知面试题</a></li><li><a href="/blog/job/mp.html" class="sidebar-link">微信小程序必知面试题</a></li><li><a href="/blog/job/self.html" class="sidebar-link">为自己出套面试题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js-基础面试题"><a href="#js-基础面试题" aria-hidden="true" class="header-anchor">#</a> js 基础面试题</h1> <h2 id="_1-js中使用typeof能得到哪些类型？"><a href="#_1-js中使用typeof能得到哪些类型？" aria-hidden="true" class="header-anchor">#</a> 1 js中使用typeof能得到哪些类型？</h2> <p>undefined、string、number、boolean、object、function</p> <h2 id="_2-js中有哪些内置函数？"><a href="#_2-js中有哪些内置函数？" aria-hidden="true" class="header-anchor">#</a> 2 js中有哪些内置函数？</h2> <p>Object、Array、Boolean、Number、String、Function、Date、RegExp、Error</p> <h2 id="_3-和-之间的区别？"><a href="#_3-和-之间的区别？" aria-hidden="true" class="header-anchor">#</a> 3 ==和===之间的区别？</h2> <p>==仅检查值相等，而===是一个更严格的等式判定，如果两个变量的值或类型不同，则返回false。</p> <h2 id="_4-2-2-2-和-2-2-2的结果？"><a href="#_4-2-2-2-和-2-2-2的结果？" aria-hidden="true" class="header-anchor">#</a> 4 2 + 2 + '2' 和 '2' + 2 + 2的结果？</h2> <p>'42'和'222'</p> <h2 id="_5-如何准确判断一个变量是数组类型"><a href="#_5-如何准确判断一个变量是数组类型" aria-hidden="true" class="header-anchor">#</a> 5 如何准确判断一个变量是数组类型</h2> <p>arr instanceof Array</p> <h2 id="_6-split-和-join-的区别"><a href="#_6-split-和-join-的区别" aria-hidden="true" class="header-anchor">#</a> 6 split() 和 join() 的区别?</h2> <p>前者是将字符串切割成数组的形式，后者是将数组转换成字符串</p> <h2 id="_7-this几种不同的使用场景？"><a href="#_7-this几种不同的使用场景？" aria-hidden="true" class="header-anchor">#</a> 7 this几种不同的使用场景？</h2> <ul><li>在构造函数中使用（构造函数本身）</li> <li>作为对象属性时使用（调用属性的对象）</li> <li>作为普通函数时使用（window）</li> <li>call，apply，bind（执行的第一个参数）</li></ul> <h2 id="_8-break和continue语句的作用？"><a href="#_8-break和continue语句的作用？" aria-hidden="true" class="header-anchor">#</a> 8 break和continue语句的作用？</h2> <ul><li>break语句从当前循环中退出。</li> <li>continue语句继续下一个循环语句。</li></ul> <h2 id="_9-如何理解json？"><a href="#_9-如何理解json？" aria-hidden="true" class="header-anchor">#</a> 9 如何理解JSON？</h2> <p>JSON是JS的一个对象，也是一种数据格式，将JSON字符串转换成JSON对象 JSON.parse()，将JSON对象转换成JSON字符串 JSON.stringify()。</p> <h2 id="_10-函数声明与函数表达式的区别？"><a href="#_10-函数声明与函数表达式的区别？" aria-hidden="true" class="header-anchor">#</a> 10 函数声明与函数表达式的区别？</h2> <ul><li>在Javscript中，解析器在向执行环境中加载数据时，对函数声明和函数表达式并非是一视同仁的，解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；</li> <li>至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解析执行。</li></ul> <h2 id="_11-javascript中定时器"><a href="#_11-javascript中定时器" aria-hidden="true" class="header-anchor">#</a> 11 JavaScript中定时器?</h2> <p>定时器用于在设定的时间执行一段代码，或者在给定的时间间隔内重复该代码。</p> <ul><li>setTimeout（function，delay）函数用于启动在所述延迟之后调用特定功能的定时器。</li> <li>setInterval（function，delay）函数用于在提到的延迟中重复执行给定的功能，只有在取消时才停止。</li> <li>clearInterval（id）函数指示定时器停止。</li></ul> <h2 id="_12"><a href="#_12" aria-hidden="true" class="header-anchor">#</a> 12</h2> <h2 id="_13-js中的继承有哪些？"><a href="#_13-js中的继承有哪些？" aria-hidden="true" class="header-anchor">#</a> 13 js中的继承有哪些？</h2> <ul><li>原型链继承：通过使用call、apply方法可以在新创建的对象上执行构造函数,用父类的构造函数来增加子类的实例；</li> <li>构造函数继承：利用原型链来实现继承，超类的一个实例作为子类的原型；</li> <li>组合继承：最常用，利用构造继承和原型链组合；</li> <li>原型式继承：采用原型式继承并不需要定义一个类，传入参数obj,生成一个继承obj对象的对象；</li> <li>寄生式继承：原型式继承的一种拓展，创建一个仅仅用于封装继承过程的函数，然后在内部以某种方式增强对象，最后返回对象；</li> <li>寄生组合式继承：结合寄生式继承和组合式继承，完美实现不带两份超类属性的继承方式；</li></ul> <h2 id="_14-请谈谈组合继承及写一个例子？"><a href="#_14-请谈谈组合继承及写一个例子？" aria-hidden="true" class="header-anchor">#</a> 14 请谈谈组合继承及写一个例子？</h2> <p>组合继承，指的是将原型链和借用构造函数的技术组合到一起, 避免了原型链和借用构造函数的缺点，融合了他们的优点，是JavaScript中最常用的继承模式。</p> <ul><li>思路是使用原型链实现对原型方法的继承，而通过借用构造函数来实现对实例属性的继承。</li> <li>既通过在原型上定义方法实现了函数的复用，又能够保证每个实例都有它自己的属性。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function SuperType(name){
+  this.name=name;
+  this.colors=[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;];
+}
+SuperType.prototype.sayName=function(){
+  alert(this.name);
+};
+function SubType(name, age){
+  //继承属性    使用借用构造函数实现对实例属性的继承
+  SuperType.call(this,name);
+  this.age=age;
+}
+//继承方法     使用原型链实现
+SubType.prototype=new SuperType();
+SubType.prototype.constructor=SubType;
+subType.prototype.sayAge=function(){
+  alert(this.age);
+};
+var instance1=new SubType(&quot;mary&quot;, 22);
+instance1.colors.push(&quot;black&quot;);
+alert(instance1.colors);   //red,blue,green,black
+instance1.sayName();  //mary
+instance1.sayAge();  //22
+
+var instance2=new SubType(&quot;greg&quot;, 25);
+alert(instance2.colors);   //red,blue,green
+instance2.sayName();  //greg
+instance2.sayAge();  //25
+</code></pre></div><h2 id="_15-下面三段程序的结果是？"><a href="#_15-下面三段程序的结果是？" aria-hidden="true" class="header-anchor">#</a> 15 下面三段程序的结果是？</h2> <div class="language- extra-class"><pre class="language-text"><code>function a() {}
+var a
+console.log(typeof a)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>var a = 1;  
+function test() {  
+  console.log(a);  
+  var a = 2; 
+}  
+test();
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>var a = 10;
+function a(a) {
+  console.log(a);
+  var a = 12;
+}
+a(11);
+</code></pre></div><ul><li>js语言本身具有预处理机制，js引擎在预处理期对所有声明的变量和函数进行处理，就是先把变量进行声明并读到内存里。</li> <li>当变量名和函数名一致时后者会覆盖前者, 所以第一段的结果为 function；</li> <li>而第二段程序，外面声明了全局变量a，值为1，但里面把a声明成了局部变量，函数内部的预处理顺序为先声明var a；然后console.log(a)，最后a=2；a=2这赋值步骤是在console.log(a)后面执行的，所以我们运行时就看到undefined了。如果函数里面去掉var，那么打印出来的值就是1了，然后全局变量a又被赋值为2。</li> <li>所以第三段程序，先预处理var a；然后预处理整个a函数, 此时a的typeof为function, 接下来再给c赋值为10，即c=10，typeof c为number了; 最后在执行a(10)调用函数,当然就会报 a 不是一个函数的错误了，因为它现在是一个整型变量了。</li></ul> <h2 id="_16-下面这段程序的结果是？"><a href="#_16-下面这段程序的结果是？" aria-hidden="true" class="header-anchor">#</a> 16 下面这段程序的结果是？</h2> <div class="language- extra-class"><pre class="language-text"><code>for (var i = 0; i &lt; 5; i++) {
+ setTimeout(function() {
+  console.log(i);
+ }, 1000);
+}
+ 
+console.log(i);
+</code></pre></div><ul><li>只要你对 JS 中同步和异步代码的区别、变量作用域、闭包等概念有正确的理解，就知道正确答案是5,5,5,5,5,5；</li> <li>若用-&gt;表示其前后的两次输出之间有 1 秒，而逗号表示间隔可以忽略，结果是？ 循环执行过程中，几乎同时设置了 5 个定时器，一般情况下，这些定时器都会在 1 秒之后触发，而循环完的输出是立即执行的, 所以结果是 5 -&gt; 5,5,5,5,5；</li> <li>如果期望代码的输出变成：5 -&gt; 0,1,2,3,4，该怎么改造代码？ 巧妙的利用 IIFE（声明即执行的函数表达式）来解决闭包造成的问题, 相当于把i赋值给了j这个局部变量:<div class="language- extra-class"><pre class="language-text"><code>for (var i = 0; i &lt; 5; i++) {
+(function(j) { 
+  setTimeout(function() {
+  console.log(j);
+  }, 1000);
+})(i);
+}
+console.log(i);
+</code></pre></div></li> <li>有没有更符合直觉的做法？ 利用 JS 中基本类型的参数传递是按值传递的特征, 对循环体稍做手脚，让负责输出的那段代码能拿到每次循环的 i 值即可:<div class="language- extra-class"><pre class="language-text"><code>var print = function (i) {
+setTimeout(function() {
+  console.log(i);
+}, 1000);
+};
+for (var i = 0; i &lt; 5; i++) {
+  print(i); // 传递到 print 的 i 值被复制了
+}
+console.log(i);
+</code></pre></div></li> <li>如果期望代码的输出变成 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5，并且要求原有的代码块中的循环和两处 console.log 不变，该怎么改造代码？<div class="language- extra-class"><pre class="language-text"><code>for (var i = 0; i &lt; 5; i++) {
+  (function(j) {
+    setTimeout(function() {
+    console.log(j);
+    }, 1000 * j)); // 这里修改 0~4 的定时器时间
+  })(i);
+}
+
+setTimeout(function() { // 这里增加定时器，超时设置为 5 秒
+  console.log(i);
+}, 1000 * i);
+</code></pre></div></li> <li>有没有基于ES6 Promise 的解决方案 ?<div class="language- extra-class"><pre class="language-text"><code>const tasks = [];
+for (var i = 0; i &lt; 5; i++) { 
+  ((j) =&gt; {
+    tasks.push(new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+      console.log(j);
+      resolve(); // 一定要 resolve
+    }, 1000 * j); 
+    }));
+  })(i);
+}
+
+Promise.all(tasks).then(() =&gt; {
+  setTimeout(() =&gt; {
+    console.log( i);
+  }, 1000); // 只需把超时设置为 1 秒
+});
+</code></pre></div></li> <li>把上面 i 的声明改成 let，怎么做？<div class="language- extra-class"><pre class="language-text"><code>const tasks = [];
+for (let i = 0; i &lt; 5; i++) { 
+  tasks.push(new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+      console.log(j);
+      resolve(); // 一定要 resolve
+    }, 1000 * j); 
+  }));
+}
+
+Promise.all(tasks).then(() =&gt; {
+  setTimeout(() =&gt; {
+    console.log( i);
+  }, 1000); // 只需把超时设置为 1 秒
+});
+</code></pre></div></li> <li>有没有代码层次更好的做法？<div class="language- extra-class"><pre class="language-text"><code>const tasks = []; // 存放异步操作的 Promise
+const print = (i) =&gt; new Promise((resolve) =&gt; {
+  setTimeout(() =&gt; {
+    console.log(i);
+    resolve();
+  }, 1000 * i);
+});
+
+// 获得全部的异步操作
+for (var i = 0; i &lt; 5; i++) {
+  tasks.push(print(i));
+}
+
+// 输出最后的 i
+Promise.all(tasks).then(() =&gt; {
+  setTimeout(() =&gt; {
+    console.log(i);
+  }, 1000);
+});
+</code></pre></div></li> <li>如何使用 ES7 中的 async await 特性来让这段代码变的更简洁？<div class="language- extra-class"><pre class="language-text"><code>  const sleep = (t) =&gt; new Promise((resolve) =&gt; {
+    setTimeout(resolve, t);
+  });
+  
+  (async () =&gt; { 
+    for (var i = 0; i &lt; 5; i++) {
+      await sleep(1000);
+      console.log(i);
+    }
+    await sleep(1000);
+    console.log(i);
+  })();
+</code></pre></div></li> <li>还能优化吗？<div class="language- extra-class"><pre class="language-text"><code>  const sleep = (t) =&gt; new Promise((resolve) =&gt; {
+    setTimeout(resolve, t);
+  });
+  
+  const print = async () =&gt; { 
+    for (let i = 0; i &lt;= 5; i++) {
+      await sleep(1000);
+      console.log(i);
+    }
+  };
+
+  print();
+</code></pre></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/job/css.html" class="prev">
+          CSS 常见面试基础题
+        </a></span> <span class="next"><a href="/blog/job/bom.html">
+          web开发 浏览器常见面试题
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.5e992f5b.js" defer></script><script src="/blog/assets/js/2.080f5a6f.js" defer></script><script src="/blog/assets/js/28.24344a81.js" defer></script>
+  </body>
+</html>
