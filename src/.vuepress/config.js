@@ -54,7 +54,7 @@ module.exports = {
       '/job/': genSidebarConfig('如何面试', ['sf', 'html', 'css', 'js', 'bom', 'node', 'vue', 'mp', 'self']),
       '/fe/': genSidebarConfig('大前端教程', ['vue', 'VueRouter', 'vuex',  'linux', 'vscode', 'node', 'code', 'suanfa', 'ngnix', 'pm2', 'ssh']),
       '/js/': genSidebarConfig('JS入门', ['1', '2', '3', '4', '5', '6', '7', '8']),
-      '/dom/': genSidebarConfig('JS与浏览器', ['1', '2', '3', '4', '5', '6', '7', '8']),
+      '/dom/': genSidebarConfig('JS与浏览器', ['1']),
       '/dd/': genSidebarConfig('导读', ['1-3', '4-6', '7-9', '10-12', '13-15', '16-18', '19-21', '22-25']),
       '/static/': genSidebarConfig('全栈入门',  ['1_1', '1_2', '1_3', '2_1', '2_2', '3_1', '3_2', '3_3', '4_1', '4_2', '4_3', '5_1', '5_2', '5_3', '6_1','6_2', '6_3']),
     }
