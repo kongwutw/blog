@@ -86,3 +86,38 @@
 - router是定义路由相关的配置;
 - view视图；app.vue是一个应用主组件；
 - main.js是入口文件
+
+## vue数据双向绑定的实现原理
+双向绑定是对表单来说的，表单的双向绑定，说到底不过是 value 的单向绑定 + onChange 事件侦听的一个语法糖。
+
+利用数据劫持结合发布订阅模式实现的数据双向绑定：
+- observer用来对初始数据通过Object.defineProperty添加setter和getter，当取数据（即调用get）的时候添加订阅对象（watcher）到数组里， 当给数据赋值（即调用set）的时候就能知道数据的变化，此时调用发布订阅中心的notify，从而遍历当前这个数据的订阅数组，执行里面所有的watcher，通知变化update。
+- compiler是用来把data编译到dom中；
+- watcher是oberver和compiler之间通信的桥梁；
+
+## vue 为何用 proxy代替 defineProperty
+Object.defineProperty是ES5中的方法，它可以直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
+
+vue2利用Object.defineProperty来劫持data数据的getter和setter操作，动态更新绑定的template模块。
+
+然而Object.defineProperty有先天缺陷——无法监听数组变化和只能劫持对象的属性，所以对于数组的监听需要hack它的8种方法，而当属性值也是对象则需要深度遍历，对性能损耗很大。
+
+而proxy一是可以直接监听数组的变化；二是可以直接监听对象而非属性，同时，Proxy作为新标准将受到浏览器厂商重点持续的性能优化，唯一的劣势就是兼容性问题,而且无法用polyfill实现。
+
+## vue 最新为何使用function base api 而不是class api?
+- 更灵活的逻辑复用能力；
+- 更好的TS类型推导；
+- 更好的性能；
+- tree-shaking 更好
+- 代码更容易被压缩
+
+## vue vs react
+设计不同思路： React 设计是改变开发者，提供强大而复杂的机制，开发者按照我的来；Vue 是适应开发者，让开发者怎么爽怎么来。
+
+Vue 进行数据拦截/代理，它对侦测数据的变化更敏感、更精确; React 推崇函数式，它直接进行局部重新刷新（或者重新渲染），这样更粗暴简单，但React 并不知道什么时候“应该去刷新”，触发局部重新变化是由开发者手动调用 setState 完成。
+
+在一定程度上，React + Mobx 也可以被认为是更繁琐的 Vue。
+
+React 事件系统庞大而复杂。其中，它暴漏给开发者的事件不是原生事件，是 React 包装过合成事件，this 默认不指向组件实例。
+
+Vue 向上扩展就是 React，Vue 向下兼容后就类似于 jQuery，渐进式有时候比革命性更符合时代的要求。
