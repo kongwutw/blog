@@ -2,6 +2,12 @@
 sidebar: auto
 ---
 # 常用网址
+## 底层技术
+- [v8](https://github.com/v8/v8)
+- [chromium](https://github.com/chromium/chromium)
+- [node](https://github.com/nodejs/node.git)
+- [深入理解node](https://github.com/yjhjstz/deep-into-node)
+
 ## JS教程
 - [慕课网JS入门](https://www.imooc.com/learn/36)
 - [慕课网JS进阶](https://www.imooc.com/learn/10)
