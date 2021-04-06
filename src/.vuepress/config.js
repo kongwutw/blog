@@ -35,14 +35,6 @@ module.exports = {
         ]
       },
       {
-        text: '修身',
-        items: [
-          { text: '曾国藩戒色修身', link: '/xs/zgf'},
-          { text: '从寿康宝鉴学戒色修身', link: '/xs/skbj'},
-          { text: '国外色情危害研究', link: '/xs/sqwh'},
-        ]
-      },
-      {
         text: '常用网址',
         link: '/url/fe'
       },
