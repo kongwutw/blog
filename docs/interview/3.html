@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入JS | 空无的博客</title>
+    <meta name="description" content="让全栈编程更容易！">
+    <link rel="icon" href="favicon.ico">
+  <meta name="theme-color" content="#3eaf7c">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f54d1925.css" as="style"><link rel="preload" href="/blog/assets/js/app.cac37654.js" as="script"><link rel="preload" href="/blog/assets/js/2.07cc4d7a.js" as="script"><link rel="preload" href="/blog/assets/js/27.dc52f9ff.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.067c6059.js"><link rel="prefetch" href="/blog/assets/js/11.d4f28280.js"><link rel="prefetch" href="/blog/assets/js/12.fa849a07.js"><link rel="prefetch" href="/blog/assets/js/13.192e16a4.js"><link rel="prefetch" href="/blog/assets/js/14.db55a0b1.js"><link rel="prefetch" href="/blog/assets/js/15.ad8d94a0.js"><link rel="prefetch" href="/blog/assets/js/16.ce4a82a0.js"><link rel="prefetch" href="/blog/assets/js/17.8ed6b8a9.js"><link rel="prefetch" href="/blog/assets/js/18.5922ef20.js"><link rel="prefetch" href="/blog/assets/js/19.1f9ef708.js"><link rel="prefetch" href="/blog/assets/js/20.ebc5fb5e.js"><link rel="prefetch" href="/blog/assets/js/21.5a17145f.js"><link rel="prefetch" href="/blog/assets/js/22.21c6574c.js"><link rel="prefetch" href="/blog/assets/js/23.b309b877.js"><link rel="prefetch" href="/blog/assets/js/24.035de1a5.js"><link rel="prefetch" href="/blog/assets/js/25.5e2a6978.js"><link rel="prefetch" href="/blog/assets/js/26.699776b9.js"><link rel="prefetch" href="/blog/assets/js/28.14f682fd.js"><link rel="prefetch" href="/blog/assets/js/29.0d5009f4.js"><link rel="prefetch" href="/blog/assets/js/3.cfe49532.js"><link rel="prefetch" href="/blog/assets/js/30.08eb6ad2.js"><link rel="prefetch" href="/blog/assets/js/31.769323ed.js"><link rel="prefetch" href="/blog/assets/js/32.c2bd0e32.js"><link rel="prefetch" href="/blog/assets/js/33.b7e67f6f.js"><link rel="prefetch" href="/blog/assets/js/34.aed0560d.js"><link rel="prefetch" href="/blog/assets/js/35.de079e6a.js"><link rel="prefetch" href="/blog/assets/js/36.462aefd6.js"><link rel="prefetch" href="/blog/assets/js/37.1c4481e7.js"><link rel="prefetch" href="/blog/assets/js/38.2967f3c4.js"><link rel="prefetch" href="/blog/assets/js/39.04f81164.js"><link rel="prefetch" href="/blog/assets/js/4.e2e0255b.js"><link rel="prefetch" href="/blog/assets/js/40.358e8cf6.js"><link rel="prefetch" href="/blog/assets/js/41.486fe283.js"><link rel="prefetch" href="/blog/assets/js/42.358f2e51.js"><link rel="prefetch" href="/blog/assets/js/43.02993ab9.js"><link rel="prefetch" href="/blog/assets/js/44.24459253.js"><link rel="prefetch" href="/blog/assets/js/45.e2a0073d.js"><link rel="prefetch" href="/blog/assets/js/46.d3cdfebf.js"><link rel="prefetch" href="/blog/assets/js/47.bfea157f.js"><link rel="prefetch" href="/blog/assets/js/48.eb24df79.js"><link rel="prefetch" href="/blog/assets/js/49.b07b9885.js"><link rel="prefetch" href="/blog/assets/js/5.a14476b9.js"><link rel="prefetch" href="/blog/assets/js/50.0400d7d3.js"><link rel="prefetch" href="/blog/assets/js/51.6093ec64.js"><link rel="prefetch" href="/blog/assets/js/52.3d4f7552.js"><link rel="prefetch" href="/blog/assets/js/53.54e7c5f7.js"><link rel="prefetch" href="/blog/assets/js/54.9ec3921e.js"><link rel="prefetch" href="/blog/assets/js/55.410a6695.js"><link rel="prefetch" href="/blog/assets/js/56.f3cafb08.js"><link rel="prefetch" href="/blog/assets/js/57.edefef15.js"><link rel="prefetch" href="/blog/assets/js/58.e6e5cce0.js"><link rel="prefetch" href="/blog/assets/js/59.9d960230.js"><link rel="prefetch" href="/blog/assets/js/6.07caf7ec.js"><link rel="prefetch" href="/blog/assets/js/60.5946c495.js"><link rel="prefetch" href="/blog/assets/js/61.0a4adb06.js"><link rel="prefetch" href="/blog/assets/js/62.ca875439.js"><link rel="prefetch" href="/blog/assets/js/63.30db72c5.js"><link rel="prefetch" href="/blog/assets/js/64.c5d1313c.js"><link rel="prefetch" href="/blog/assets/js/65.6db0d4ee.js"><link rel="prefetch" href="/blog/assets/js/66.8c2cc3f7.js"><link rel="prefetch" href="/blog/assets/js/67.48664e70.js"><link rel="prefetch" href="/blog/assets/js/7.76f56719.js"><link rel="prefetch" href="/blog/assets/js/8.27e26706.js"><link rel="prefetch" href="/blog/assets/js/9.a9f74242.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f54d1925.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">空无的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">教程</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/static/1_1.html" class="nav-link">全栈入门</a></li><li class="dropdown-item"><!----> <a href="/blog/js/1.html" class="nav-link">JS入门</a></li><li class="dropdown-item"><!----> <a href="/blog/dd/1-3.html" class="nav-link">JS高级导读</a></li><li class="dropdown-item"><!----> <a href="/blog/fe/vue.html" class="nav-link">前端进阶</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">实战分享</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/share/env.html" class="nav-link">开发环境配置参考</a></li><li class="dropdown-item"><!----> <a href="/blog/share/ssr.html" class="nav-link">vue服务端渲染</a></li><li class="dropdown-item"><!----> <a href="/blog/share/mp.html" class="nav-link">小程序开发总结</a></li><li class="dropdown-item"><!----> <a href="/blog/share/iris.html" class="nav-link">go+vue前后端分离实战</a></li><li class="dropdown-item"><!----> <a href="/blog/share/uni.html" class="nav-link">uni-app多端开发回顾</a></li><li class="dropdown-item"><!----> <a href="/blog/share/koa.html" class="nav-link">koa+vue全栈开发实战</a></li></ul></div></div><div class="nav-item"><a href="/blog/interview/1.html" class="nav-link">面试宝典</a></div><div class="nav-item"><a href="/blog/url/fe.html" class="nav-link">常用网址</a></div><div class="nav-item"><a href="https://github.com/kongwutw/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">教程</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/static/1_1.html" class="nav-link">全栈入门</a></li><li class="dropdown-item"><!----> <a href="/blog/js/1.html" class="nav-link">JS入门</a></li><li class="dropdown-item"><!----> <a href="/blog/dd/1-3.html" class="nav-link">JS高级导读</a></li><li class="dropdown-item"><!----> <a href="/blog/fe/vue.html" class="nav-link">前端进阶</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">实战分享</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/share/env.html" class="nav-link">开发环境配置参考</a></li><li class="dropdown-item"><!----> <a href="/blog/share/ssr.html" class="nav-link">vue服务端渲染</a></li><li class="dropdown-item"><!----> <a href="/blog/share/mp.html" class="nav-link">小程序开发总结</a></li><li class="dropdown-item"><!----> <a href="/blog/share/iris.html" class="nav-link">go+vue前后端分离实战</a></li><li class="dropdown-item"><!----> <a href="/blog/share/uni.html" class="nav-link">uni-app多端开发回顾</a></li><li class="dropdown-item"><!----> <a href="/blog/share/koa.html" class="nav-link">koa+vue全栈开发实战</a></li></ul></div></div><div class="nav-item"><a href="/blog/interview/1.html" class="nav-link">面试宝典</a></div><div class="nav-item"><a href="/blog/url/fe.html" class="nav-link">常用网址</a></div><div class="nav-item"><a href="https://github.com/kongwutw/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>面试宝典</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/interview/1.html" class="sidebar-link">准备简历</a></li><li><a href="/blog/interview/2.html" class="sidebar-link">web基础</a></li><li><a href="/blog/interview/3.html" class="active sidebar-link">深入JS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/interview/3.html#如何理解原型？" class="sidebar-link">如何理解原型？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#如何理解原型链？" class="sidebar-link">如何理解原型链？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#深入聊聊call、apply-及-bind-函数？" class="sidebar-link">深入聊聊call、apply 及 bind 函数？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#深入谈谈-new-的原理？" class="sidebar-link">深入谈谈 new 的原理？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#instanceof-的原理是什么？" class="sidebar-link">instanceof 的原理是什么？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#谈谈js中的模块化？" class="sidebar-link">谈谈JS中的模块化？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#谈谈js中的异步？" class="sidebar-link">谈谈JS中的异步？</a></li><li class="sidebar-sub-header"><a href="/blog/interview/3.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/blog/interview/4.html" class="sidebar-link">算法</a></li><li><a href="/blog/interview/5.html" class="sidebar-link">vue</a></li><li><a href="/blog/interview/6.html" class="sidebar-link">react</a></li><li><a href="/blog/interview/7.html" class="sidebar-link">性能优化</a></li><li><a href="/blog/interview/8.html" class="sidebar-link">浏览器</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="深入js"><a href="#深入js" aria-hidden="true" class="header-anchor">#</a> 深入JS</h1> <p>JS这门语言，入门容易，深入难，因此对于工作3年以上的码农，面试官会经常考察关于JS底层原理的一些知识点，这里收集了这几年我真实面试过程中遇到的一些问题。</p> <h2 id="如何理解原型？"><a href="#如何理解原型？" aria-hidden="true" class="header-anchor">#</a> 如何理解原型？</h2> <p>原型是原型对象的简称，JS如此设计主要用于实现继承，JavaScript 语言的继承不通过 class，而是通过“原型对象”（prototype）实现。</p> <p>原型对象的所有属性和方法，都能被实例对象所共享，也就是说，如果属性和方法定义在原型上，那么所有实例对象就能共享，不仅节省了内存，还体现了实例对象之间的联系。</p> <p>JavaScript 规定，每个函数都有一个prototype属性，指向一个对象：</p> <div class="language- extra-class"><pre class="language-text"><code>function func() {}
+typeof func.prototype // &quot;object&quot;
+</code></pre></div><p>可以看到，func函数具有prototype这个默认属性，指向一个对象。对于构造函数来说，生成实例的时候，该属性会自动成为实例对象的原型。</p> <p>原型对象的属性不是实例对象自身的属性，只要修改，就会立刻会体现在所有实例对象上。</p> <div class="language- extra-class"><pre class="language-text"><code>function Coder(name) {
+  this.name = name;
+}
+Coder.prototype.sex = 'male';
+
+const c1 = new Coder('小明');
+const c2 = new Coder('小二');
+c1.sex // 'male'
+c2.sex // 'male'
+
+Coder.prototype.sex = 'female';
+c1.sex // 'female'
+c2.sex // 'female'
+</code></pre></div><p>可以看到，Coder构造函数原型对象的sex属性的值变为female，两个实例对象的sex属性立刻跟着变了。</p> <p>这是因为实例对象其实没有sex属性，都是读取原型对象的color属性。</p> <ul><li>当实例对象本身没有某个属性或方法的时候，它会到原型对象去寻找该属性或方法；</li> <li>如果实例对象自身就有某个属性或方法，它就不会再去原型对象寻找这个属性或方法。</li></ul> <p>总之，原型对象的作用，就是定义所有实例对象共享的属性和方法。</p> <h2 id="如何理解原型链？"><a href="#如何理解原型链？" aria-hidden="true" class="header-anchor">#</a> 如何理解原型链？</h2> <p>通过前面，我们了解到 JS 规定，所有对象都有自己的原型对象，这意味着：</p> <ul><li>任何一个对象，都可以充当其他对象的原型；</li> <li>由于原型对象也是对象，也有自己的原型。</li></ul> <p>显然，在读取对象属性时，从对象到原型、再到原型的原型，直到原型变为null，就形成一个原型链（prototype chain）。</p> <p>在JS中，所有对象通过原型链，最终会到Object.prototype，即Object构造函数的prototype属性。</p> <p>因此，所有对象都继承了内置 Object 对象的prototype属性，这就是所有对象都有valueOf和toString方法的原因，因为这是从Object.prototype继承的。</p> <p>Object.prototype的原型是null，因为null没有任何属性和方法，所以原型链的尽头就是null。</p> <div class="language- extra-class"><pre class="language-text"><code>Object.getPrototypeOf(Object.prototype) // null
+</code></pre></div><p>由此可以知道，读取对象的某个属性时，JavaScript 引擎会按照原型链的顺序查找：</p> <ul><li>先寻找对象本身的属性；</li> <li>如果找不到，就到它的原型去找；</li> <li>如果还是找不到，就到原型的原型去找；</li> <li>如果直到最顶层的Object.prototype还是找不到，则返回undefined。</li></ul> <p>对于原型链需要注意：</p> <ul><li>“覆盖”（overriding）问题：如果对象自身和它的原型，都定义了一个同名属性，那么优先读取对象自身的属性；</li> <li>性能问题：如果寻找某个不存在的属性，将会遍历整个原型链，所寻找的属性在越上层的原型对象，对性能的影响越大。</li></ul> <h2 id="深入聊聊call、apply-及-bind-函数？"><a href="#深入聊聊call、apply-及-bind-函数？" aria-hidden="true" class="header-anchor">#</a> 深入聊聊call、apply 及 bind 函数？</h2> <p>之所以有这三个函数，是因为 this 的动态切换，使得JS编程变得困难和模糊，所以JS得提供切换/固定this的指向的机制，避免出现意想不到的情况。</p> <p>什么是this呢？其实它是this对象的简称，就是属性或方法“当前”所在的对象。</p> <p>在JS 中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是函数运行时所在的对象（环境）。</p> <p>但是 JS支持运行环境动态切换，意味着没有办法事先确定到底 this 指向哪个对象，所以得提供call、apply 及 bind 函数，让开发者控制this指向。</p> <p>JS支持函数式编程，使得函数可以在不同的运行环境执行，所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。</p> <p>所以，this就出现了，它的设计目的就是在函数体内部，获取函数当前的运行环境。</p> <p>谈完了为何需要call、apply 及 bind 函数，我们聊聊他们的异同：</p> <ul><li>都可以改变this指向，第一个参数都是this要指向的对象，也就是想指定的上下文，都可以利用后续参数传参；</li> <li>传参方式不同，apply接收一个数组作为函数执行时的参数，其他可以传多个参数；</li> <li>bind 是返回对应函数，便于稍后调用，而apply 、call 则是立即调用 。</li></ul> <p><strong>手动实现call方法</strong>：</p> <ul><li>给新对象添加一个函数，并让this 指向这个函数;</li> <li>执行这个函数</li> <li>执行完后删除</li> <li>将执行结果返回</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Function.prototype.myCall = function(ctx) {
+    if(typeof this !== 'function') {
+        throw new TypeError('请传入函数！');
+    }
+    const args = [...arguments].slice(1);
+    // 为当前对象添加函数fn, 值为要调用的函数;
+    ctx.fn = this ;
+    // 执行添加的函数fn
+    const res = ctx.fn(...args);
+    // 执行完后删除
+    delete ctx.fn;
+    return res;
+}
+
+var n = 1;
+var obj = { n: 2 };
+
+function getValue() {
+  console.log(this.n);
+}
+
+getValue.myCall(window) // 1
+getValue.myCall(obj) // 2
+</code></pre></div><p><strong>手动实现apply方法</strong>：</p> <div class="language- extra-class"><pre class="language-text"><code>// 与call的思想类似，只是需要判断一下参数数组是否存在
+Function.prototype.myApply = function(ctx) {
+    if(typeof this != 'function') {
+        throw new TypeError('请传入函数！');
+    }
+    ctx.fn = this
+    const  res = arguments[1] ? ctx.fn(...arguments[1]: ctx.fn();
+    delete ctx.fn;
+    return res;
+}
+
+var n = 1;
+var obj = { n: 2 };
+
+function getValue() {
+  console.log(this.n);
+}
+
+getValue.myApply(window) // 1
+getValue.myApply(obj) // 2
+</code></pre></div><p><strong>手动实现bind方法</strong>：</p> <ul><li>返回一个函数，其他与call, apply类似；</li> <li>如果返回的函数作为构造函数，bind时指定的 this 值会失效，但传入的参数依然生效。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>Function.prototype.myBind = function(ctx, ...rest) {
+  var self = this;
+  return function func(...args) {
+    if (this instanceof func) {
+      return new self(...rest, ...args)
+    }
+    return self.apply(ctx, rest.concat(args))
+  }
+}
+
+var n = 1;
+var obj = { n: 2 };
+
+function getValue() {
+  console.log(this.n);
+}
+
+const getValue1 = getValue.myBind(window) 
+getValue1(); // 1
+const getValue2 =getValue.myBind(obj)
+getValue2(); // 2
+</code></pre></div><h2 id="深入谈谈-new-的原理？"><a href="#深入谈谈-new-的原理？" aria-hidden="true" class="header-anchor">#</a> 深入谈谈 new 的原理？</h2> <p>谈new之前，得先了解JS中的构造函数：我们知道JS是面向对象编程的语言，第一步就是要生成对象，而”构造函数”，就是专门用来生成实例对象的函数。</p> <p>构造函数的特点有：</p> <ul><li>第一个字母通常大写；</li> <li>函数体内部使用了this关键字，代表了所要生成的对象实例；</li> <li>生成对象的时候，必须使用new命令。</li></ul> <p>因此，我们可以知道，new命令的作用，就是执行构造函数，返回一个实例对象，会依次执行下面的步骤:</p> <ul><li>创建一个空对象，作为将要返回的对象实例；</li> <li>将这个空对象的原型，指向构造函数的prototype属性；</li> <li>将这个空对象赋值给函数内部的this关键字；</li> <li>开始执行构造函数内部的代码。</li></ul> <p>对于创建一个对象来说，无论性能上还是可读性，一般都推荐使用字面量的方式创建对象，因为使用 new Object() 的方式创建对象需要通过作用域链一层层找到 Object。</p> <p>自己手动实现一个new:</p> <div class="language- extra-class"><pre class="language-text"><code>function myNew (func, ...arg) {
+    // 创建一个新对象且将其隐式原型指向构造函数原型
+    const obj = {
+        __proto__: func.prototype 
+    }
+    // 执行构造函数
+    func.apply(obj, arg);
+    // 返回该对象
+    return obj;
+}
+
+function Person (name, age) {
+    this.name = name ;
+    this.age = age
+}
+
+const p = myNew(Person, 'lilei', '12');
+console.log(p);
+</code></pre></div><h2 id="instanceof-的原理是什么？"><a href="#instanceof-的原理是什么？" aria-hidden="true" class="header-anchor">#</a> instanceof 的原理是什么？</h2> <p>instanceof 的内部机制是通过判断对象的原型链中是不是能找到类型的 prototype，所以可以正确判断对象的类型，其原理如下：</p> <ul><li>获取类型的原型；</li> <li>获得对象的原型；</li> <li>循环判断对象的原型是否等于类型的原型，直到对象原型为 null。</li></ul> <p>自己实现 instanceof:</p> <div class="language- extra-class"><pre class="language-text"><code>function myInstanceof(left, right) {
+  const prototype = right.prototype;
+  left = left.__proto__;
+  while (true) {
+    if (left === null || left === undefined) {
+        return false;
+    } 
+    if (prototype === left){
+       return true;
+    }
+    left = left.__proto__;
+  }
+}
+</code></pre></div><h2 id="谈谈js中的模块化？"><a href="#谈谈js中的模块化？" aria-hidden="true" class="header-anchor">#</a> 谈谈JS中的模块化？</h2> <p>在ES6之前，JS一直没有模块体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。</p> <p>这对开发大型的、复杂的项目形成了巨大障碍，使用模块化的有以下好处：</p> <ul><li>解决命名冲突</li> <li>提供复用性</li> <li>提高代码可维护性</li></ul> <p>在早期，使用立即执行函数实现模块化是常见的手段，通过函数作用域解决了命名冲突、污染全局作用域的问题：</p> <div class="language- extra-class"><pre class="language-text"><code>(function(globalVariable){
+   globalVariable.test = function() {}
+   // ... 声明的变量、函数都不会污染全局作用域
+})(globalVariable)
+</code></pre></div><p>在 ES6 之前，社区制定了 CommonJS(用于服务器) 和 AMD(用于浏览器) 等模块加载方案，直到ES6 在语言标准的层面上，实现了模块功能。</p> <p>CommonJS 最早在 Nodejs 中使用，虽然现在有了 ES Module，但目前服务端还在广泛使用，比如在 Webpack 中你就能见到它：</p> <div class="language- extra-class"><pre class="language-text"><code>// x.js
+module.exports = {
+    x: 0
+}
+// 或
+exports.x = 0;
+
+// y.js
+const x = require('./x.js')
+x.x // 0
+</code></pre></div><p>在 CommonJs 的模块化规范中，每一个文件就是一个模块，拥有自己独立的作用域、变量、以及方法等，对其他的模块都不可见。</p> <p>CommonJS规范规定，每个模块内部，module 变量代表当前模块。这个变量是一个对象，它的 exports 属性（module.exports）是对外的接口。</p> <p>加载某个模块，其实是加载该模块的 module.exports 属性，require 方法用于加载模块。</p> <p>虽然 exports 和 module.exports 用法相似，但是不能对 exports 直接赋值。</p> <p>因为 const exports = module.exports 这句代码表明了 exports 和 module.exports 享有相同地址，通过改变对象的属性值会对两者都起效，但是如果直接对 exports 赋值就会导致两者不再指向同一个内存地址，修改并不会对 module.exports 起效。</p> <p>ES Module 是原生实现的模块化方案，与 CommonJS 有以下几个区别</p> <ul><li>CommonJS 支持动态导入，也就是 require(${path}/xx.js)，后者目前不支持，但是已有提案</li> <li>CommonJS 是同步导入，因为用于服务端，文件都在本地，同步导入即使卡住主线程影响也不大;</li> <li>ES Module是异步导入，因为用于浏览器，需要下载文件，如果也采用同步导入会对渲染有很大影响;</li> <li>CommonJS 在导出时都是值拷贝，就算导出的值变了，导入的值也不会改变，所以如果想更新值，必须重新导入一次;</li> <li>ES Module 采用实时绑定的方式，导入导出的值都指向同一个内存地址，所以导入值会跟随导出值变化</li> <li>ES Module 会编译成 require/exports 来执行的</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import x from './x.js'
+import { x } from './x.js'
+// 导出模块 API
+export function a() {}
+export default function() {}
+</code></pre></div><h2 id="谈谈js中的异步？"><a href="#谈谈js中的异步？" aria-hidden="true" class="header-anchor">#</a> 谈谈JS中的异步？</h2> <p>对于有一定开发经验的码农，应该都知道JavaScript 采用单线程，而不是多线程。</p> <p>因为多线程需要共享资源、且有可能修改彼此的运行结果，浏览器实现JS这个脚本语言，就会变得很复杂。</p> <p>所以，为了避免复杂性，JavaScript 一开始就是单线程，这已经成了这门语言的核心特征，将来也不会改变。</p> <p>单线程模型虽然对 JavaScript 构成了很大的限制，但也因此使它具备了其他语言不具备的优势。</p> <p>如果用得好，JavaScript 程序是不会出现堵塞的，这就是为什么 Node 可以用很少的资源，应付大流量访问的原因。</p> <p>程序里面所有的任务，可以分成：</p> <ul><li>同步任务（synchronous）：没有被引擎挂起、在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务。</li> <li>异步任务（asynchronous）：被引擎放在一边，不进入主线程、而进入任务队列的任务，排在异步任务后面的代码，不用等待异步任务结束会马上运行，也就是说，异步任务不具有“堵塞”效应。</li></ul> <p>JS运行时，除了一个正在运行的主线程，引擎还提供一个任务队列，里面是各种需要当前程序处理的异步任务。</p> <p>为了处理异步任务，JS引擎提供了事件循环的机制：不停地检查，只要同步任务执行完了，引擎就会去检查那些挂起来的异步任务，是不是可以进入主线程了。</p> <p>异步操作的模式有：</p> <ul><li>回调函数：异步操作最基本的方法，优点是简单、容易理解和实现，缺点是不利于代码的阅读和维护，各个部分之间高度耦合，使得程序结构混乱、流程难以追踪。</li> <li>事件监听：执行不取决于代码的顺序，而取决于某个事件是否发生，优点是容易理解和绑定多个事件及回调函数，耦合低且利于模块化，缺点是整个程序都要变成事件驱动型，运行流程会不清晰，很难看出主流程。</li> <li>发布/订阅：存在一个“信号中心”，某个任务执行完成，就向信号中心“发布”一个信号，其他任务可以向信号中心“订阅”（subscribe）这个信号，从而知道什么时候自己可以开始执行。</li> <li>Promise 对象：不是新的语法功能，而是一种新的写法，允许将回调函数的嵌套，改成链式调用，写法只是回调函数的改进，使用then方法以后，异步任务的执行看得更清楚，存在的最大问题是代码冗余。</li> <li>ES6 Generator 函数：执行后会返回一个指向内部状态的遍历器指针对象，每次调用遍历器对象的next方法，就会返回一个有着value和done两个属性的对象，异步操作需要暂停的地方，都用yield语句注明，Generator 函数可以暂停执行和恢复执行，这是它能封装异步任务的根本原因。</li> <li>ES7 async 函数：只是 Generator 函数的语法糖，只是内置了执行器，通过async和await 提供更好的语义，返回值是 Promise 对象，比 Generator 函数的返回值是 Iterator 对象方便，这可以看作是多个异步操作包装成的一个 Promise 对象，而await命令就是内部then命令的语法糖。</li></ul> <p>手动实现promise对象：</p> <ul><li>面试时只需写出简单版即可：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class MyPromise {
+  constructor(fn) {
+      this.value = null； // 定义传递到then的value
+      this.state = 'PENDING'；  // 定义当前Promise运行状态
+      this.resolvedCallBacks = []；// 定义Promise失败状态的回调函数集合
+      this.rejectedCallBacks = []; // 定义Promise成功状态的回调函数集合
+      MyPromise.that = this; // 为静态方法定义其内部使用的that  
+      try {
+          // 执行 new MyPromise() 内传入的方法
+          fn(MyPromise.resolve, MyPromise.reject);
+      } catch (error) {
+          MyPromise.reject(this.value)
+      }
+  }
+  static resolve(value) {}
+  static reject(value) {}
+  then(onFulfilled, onRejected) {}
+}
+</code></pre></div><ul><li>完整实现参考版：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class MyPromise {
+  constructor(fn) {
+      this.states = {
+          PENDING: 'PENDING', 
+          RESOLVED: 'RESOLVED', 
+          REJECTED: 'REJECTED'
+      }
+      this.value = null； // 定义传递到then的value
+      this.state = this.states.PENDING；  // 定义当前Promise运行状态
+      this.resolvedCallBacks = []；// 定义Promise失败状态的回调函数集合
+      this.rejectedCallBacks = []; // 定义Promise成功状态的回调函数集合
+      MyPromise.that = this; // 为静态方法定义其内部使用的that  
+      try {
+          // 执行 new MyPromise() 内传入的方法
+          fn(MyPromise.resolve, MyPromise.reject);
+      } catch (error) {
+          MyPromise.reject(this.value)
+      }
+  }
+   // 静态resolve方法，MyPromise实例不可访问；
+  static resolve(value) {
+      const that = MyPromise.that;
+      // 判断是否是MyPromise实例访问resolve
+      const f = that instanceof MyPromise
+      // MyPromise实例对象访问resolve
+      if (f &amp;&amp; that.state == that.states.PENDING) {
+          that.state = that.states.RESOLVED
+          that.value = value
+          that.resolvedCallBacks.map(cb =&gt; (that.value = cb(that.value)))
+      }
+      // MyPromise类访问resolve
+      if (!f) {
+          const obj = new MyPromise()
+          return Object.assign(obj, {
+              state: obj.states.RESOLVED,
+              value
+          })
+      }
+  }
+  static reject(value) {
+      const that = MyPromise.that;
+      const f = that instanceof MyPromise
+      if (f &amp;&amp; that.state == that.states.PENDING) {
+          that.state = that.states.REJECTED
+          that.value = value
+          that.rejectedCallBacks.map(cb =&gt; (that.value = cb(that.value)))
+      }
+      if (!f) {
+          const obj = new MyPromise()
+          return Object.assign(obj, {
+              state: obj.states.REJECTED,
+              value
+          })
+      }
+  }
+  // 定义在MyPromise原型上的then方法
+  then(onFulfilled, onRejected) {
+      const { PENDING, RESOLVED, REJECTED } = this.states;
+      const f = typeof onFulfilled == &quot;function&quot; ? onFulfilled : c =&gt; c;
+      const r = typeof onRejected == &quot;function&quot; ? onRejected : c =&gt; throw c;
+      switch (this.state) {
+          case PENDING:
+              this.resolvedCallBacks.push(f)
+              this.rejectedCallBacks.push(r)
+              break;
+          case RESOLVED:
+              this.value = f(this.value)
+              break;
+          case REJECTED:
+              this.value = r(this.value)
+              break;
+          default:
+              break;
+      }
+      // 满足链式调用then，返回MyPromise实例对象
+      return this;
+  }
+}
+</code></pre></div><h2 id="小结"><a href="#小结" aria-hidden="true" class="header-anchor">#</a> 小结</h2> <p>这里只是列举了一些JS中底层原理或疑难的知识点，一般面试时间都有限，面试官只会挑其中的一两道进行考察，只有架构师岗位，或者大公司的中高级岗位，才可能会考察。</p> <p>实际上，我在真实面试中，被问到的也极少，只能那些不着急招人的大公司，才有可能在面试中和你聊一些JS比较深入的话题，因此大家了解即可。</p> <p>因为前端技术变化很快，企业生存压力大，尽可能掌握多端技术框架响应业务需求才是真正用人方看重的技能。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/blog/interview/2.html" class="prev">
+          web基础
+        </a></span> <span class="next"><a href="/blog/interview/4.html">
+          算法
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.cac37654.js" defer></script><script src="/blog/assets/js/2.07cc4d7a.js" defer></script><script src="/blog/assets/js/27.dc52f9ff.js" defer></script>
+  </body>
+</html>
