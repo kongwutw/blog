@@ -1,5 +1,5 @@
 ---
-title: 快陪练学习文档
+title: 学习文档
 home: true
 heroImage: /img/logo.png
 actionText: 开始学习
