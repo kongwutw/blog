@@ -4,13 +4,14 @@
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
+  "lang": "zh-cn",
   title: '空无',
   description: '让全栈编程更容易~',
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }]],
   themeConfig: {
-    repo: 'vitejs/vite',
+    repo: 'kongwutw/blog',
     logo: '/logo.png',
-    docsDir: 'docs',
+    docsDir: 'doc',
     docsBranch: 'main',
     editLinks: true,
     editLinkText: 'Suggest changes to this page',
