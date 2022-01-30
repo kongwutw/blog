@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vitepress dev doc",
-    "build": "vitepress build doc",
-    "start": "vuepress dev src",
+    "start": "vitepress dev src",
+    "build": "vitepress build src",
     "pd": "npm run pp && npm run pb && npm run pc",
     "pp": "git reset --hard && git pull && npm install",
     "pc": "git add . && git commit -m 'deploy' && git push",

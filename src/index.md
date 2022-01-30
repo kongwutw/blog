@@ -1,11 +1,11 @@
 ---
 home: true
 heroImage: /logo.png
-actionText: 开始学习
-actionLink: /guide/
+actionText: 热点技术
+actionLink: /tech/
 
-altActionText: 关于空无
-altActionLink: /guide/why
+altActionText: 关于小编
+altActionLink: /about
 
 features:
 - title: 正直
