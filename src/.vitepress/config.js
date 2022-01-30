@@ -5,13 +5,15 @@
  */
 module.exports = {
   "lang": "zh-cn",
+  outDir: '../docs',
+  base:'/blog/',
   title: '空无',
   description: '让全栈编程更容易~',
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }]],
   themeConfig: {
     repo: 'kongwutw/blog',
     logo: '/logo.png',
-    docsDir: 'doc',
+    docsDir: 'docs',
     docsBranch: 'main',
     nav: [
       { text: '技术文章', link: '/tech/' },

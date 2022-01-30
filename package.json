@@ -8,7 +8,7 @@
     "pd": "npm run pp && npm run pb && npm run pc",
     "pp": "git reset --hard && git pull && npm install",
     "pc": "git add . && git commit -m 'deploy' && git push",
-    "pb": "rm -rf docs && vitepress build src && mv src/.vitepress/dist docs"
+    "pb": "vitepress build src"
   },
   "keywords": [],
   "author": "",
