@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TS实现可在React中使用的DI | 空无</title>
+    <meta name="description" content="让全栈编程更容易~">
+    <link rel="stylesheet" href="/assets/style.12993c18.css">
+    <link rel="modulepreload" href="/assets/Home.d5ad5d73.js">
+    <link rel="modulepreload" href="/assets/app.3dcb67ef.js">
+    <link rel="modulepreload" href="/assets/tech_di_react.md.b9125f56.lean.js">
+    
+    <link rel="icon" type="image/svg+xml" href="/logo.png">
+  <meta name="twitter:title" content="TS实现可在React中使用的DI | 空无">
+  <meta property="og:title" content="TS实现可在React中使用的DI | 空无">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="空无, back to home" data-v-675d8756 data-v-cc01ef16><img class="logo" src="/logo.png" alt="Logo" data-v-cc01ef16> 空无</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/tech/" data-v-b8818f8c>技术文章 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/about/" data-v-b8818f8c>关于小编 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>常用网址</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://juejin.cn/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>知乎</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://www.zhihu.com/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>掘金</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://vuejs.org/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vue官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vite官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://antdv.com/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>antdv官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>react官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://flutter.dev/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>flutter官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://uniapp.dcloud.net.cn/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>uni-app官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><!--]--></ul></div></div><!--]--><!----><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://github.com/kongwutw/blog" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>GitHub <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item active" href="/tech/" data-v-b8818f8c>技术文章 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/about/" data-v-b8818f8c>关于小编 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>常用网址</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://juejin.cn/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>知乎</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://www.zhihu.com/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>掘金</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://vuejs.org/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vue官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vite官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://antdv.com/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>antdv官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>react官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://flutter.dev/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>flutter官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item isExternal" href="https://uniapp.dcloud.net.cn/" target="_blank" rel="noopener noreferrer" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>uni-app官网</span><span class="icon" data-v-bbc27490><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-bbc27490><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><!--]--></ul></div></div><!--]--><!----><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://github.com/kongwutw/blog" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>GitHub <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><p class="sidebar-link-item">技术调研</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/tech/">22年大前端热点技术</a><!----></li></ul></li><li class="sidebar-link"><p class="sidebar-link-item">技术原理</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/tech/di/about">深入浅出依赖注入</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/tech/di/inversify">基于inversify打造DI业务框架</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/tech/di/angular">Angular 的依赖注入</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item active" href="/tech/di/react">TS实现可在React中使用的DI</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#什么是依赖注入">什么是依赖注入</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#基础概念">基础概念</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#在-ts-中实现简单的di">在 TS 中实现简单的DI</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#依赖收集">依赖收集</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#依赖注册和初始化">依赖注册和初始化</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#实现可在-react-组件中使用的-di-系统">实现可在 React 组件中使用的 DI 系统</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#react-体系中还需要这套东西么？">React 体系中还需要这套东西么？</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#有-context-呀">有 Context 呀</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#有-redux-呀">有 Redux 呀</a><!----></li></ul></li></ul></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h1 id="ts实现可在react中使用的di" tabindex="-1">TS实现可在React中使用的DI <a class="header-anchor" href="#ts实现可在react中使用的di" aria-hidden="true">#</a></h1><h2 id="什么是依赖注入" tabindex="-1">什么是依赖注入 <a class="header-anchor" href="#什么是依赖注入" aria-hidden="true">#</a></h2><p>在说依赖注入之前，我们发现有个概念叫做 “控制反转”经常一起出现，它们区别是：</p><ul><li>控制反转(Inversion of Control)是一种设计思想</li><li>依赖注入(Dependency Injection)是一种编程技巧，是控制反转的一种实现方式</li></ul><p>通过依赖注入，可以将对象的初始化的细节与使用者剥离开。在 OO 体系内粗暴地来说，就是使用者不用通过 new 或其他方式显式创建依赖，而只要在构造函数中做出声明，就能直接使用在外部创建好的依赖实例。</p><p>不同的框架实现依赖注入的方式不尽相同，后端有 Java 的 Spring 框架，Node.js 的 Nest.js 服务端框架等等。对于前端来说，比较有名的是 Angular 框架中的依赖注入实现。</p><h2 id="基础概念" tabindex="-1">基础概念 <a class="header-anchor" href="#基础概念" aria-hidden="true">#</a></h2><p>以 Angular 为例，它的 DI 系统里有几个概念。</p><ul><li>injectable: 可以被注入的一类对象，在业务系统中，我们希望声明一些 &quot;可注入服务&quot;(injectable service) 供其他地方使用。在 Angular 中，可注入的服务类(Service Class)需要用 @Injectable 装饰。其他的一些简单对象和常量，也可以被注入。</li><li>di token: 在 DI 过程中用于查找的标志，可以是任何原始类型或对象，不过一般为了避免冲突，会使用 symbol 或是 class 来作为标志。</li><li>injector: 注入器，在 DI 系统中能根据 token 查找到依赖项并传递给使用者的一类对象。在 Angular 中有不同的注入器实现，没有研究过，不细讲。</li><li>provider: 供应者，运行时的依赖具体对象提供者。具有往 injector 中写入对应某 token 的实现的能力。</li></ul><h2 id="在-ts-中实现简单的di" tabindex="-1">在 TS 中实现简单的DI <a class="header-anchor" href="#在-ts-中实现简单的di" aria-hidden="true">#</a></h2><p>一个 DI 系统分为两个重要阶段：依赖收集和依赖初始化</p><h3 id="依赖收集" tabindex="-1">依赖收集 <a class="header-anchor" href="#依赖收集" aria-hidden="true">#</a></h3><p>手动指定</p><div class="language-"><pre><code>// file1
+export const USER_SERVICE_SYMBOL = Symbol(&#39;UserService&#39;)
+
+// file2
+import {USER_SERVICE_SYMBOL} from &#39;file1&#39;
+
+@Inject({
+  dependencies: [USER_SERVICE_SYMBOL],
+})
+class Component {
+  constructor(private userService: UserService) {}
+}
+</code></pre></div><p>自动收集 Typescript 从 1.5 开始就支持 metadata，在编译的时候将编译的得到的元信息记录下来使用, 通过 Reflect.getMetadata(&#39;design:paramtypes&#39;, target) 就可以获取装饰器所装饰类的入参。比如:</p><div class="language-"><pre><code>import UserService from &#39;./UserService&#39;
+
+@Inject
+class Component {
+  constructor(private userService: UserService) {}
+}
+</code></pre></div><p>TSC 生成部分代码:</p><div class="language-"><pre><code>var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    if (typeof Reflect === &quot;object&quot; &amp;&amp; typeof Reflect.metadata === &quot;function&quot;) return Reflect.metadata(k, v);
+};
+
+let Component = class Component {
+    constructor(userService) {
+        this.userService = userService;
+    }
+};
+Component = __decorate([
+    Inject,
+    __metadata(&quot;design:paramtypes&quot;, [UserService])
+], Component);
+</code></pre></div><p>让 ts 能生成后面的 __metadata 调用的前提是提供了编译参数 emitDecoratorMetadata:</p><div class="language-"><pre><code>{
+    &quot;compilerOptions&quot;: {
+        &quot;experimentalDecorators&quot;: true,
+        &quot;emitDecoratorMetadata&quot;: true,
+    },
+}
+</code></pre></div><p>若运行环境不支持 Reflect.metadata，可以安装和使用 polyfill import &#39;reflect-metadata&#39;。</p><h3 id="依赖注册和初始化" tabindex="-1">依赖注册和初始化 <a class="header-anchor" href="#依赖注册和初始化" aria-hidden="true">#</a></h3><p>有一些可以注意的点如下，具体例子见下一节的实现:</p><ul><li>Injectable Service 可以在使用的时候才初始化。声明为 class 的话很自然地可以在 new 的时候做这个事情。当然也有其他的约定方式，视具体框架而定。</li><li>一些情况下我们希望对于一种服务，在 DI 系统中只有一个实例，这可以通过 injector 的一个 providerInstanceMap cache 来实现。</li></ul><h2 id="实现可在-react-组件中使用的-di-系统" tabindex="-1">实现可在 React 组件中使用的 DI 系统 <a class="header-anchor" href="#实现可在-react-组件中使用的-di-系统" aria-hidden="true">#</a></h2><div class="language-"><pre><code>// 简单的 Injector + Provider
+class Injection {
+  private providerMap = new Map();
+  /** 记录 provider 的实例，起到 cache 的作用 */
+  private providerInstanceMap = new Map();
+  /** 记录 class constructor 参数的信息 */
+  private typeInfoMap = new Map();
+
+  registerParamTypes(token, paramTypes) {
+    this.typeInfoMap.set(token, paramTypes);
+  }
+
+  registerProvider(token, provider) {
+    this.providerMap.set(token, provider);
+  }
+
+  getProviderInstance(token) {
+    let depInstance;
+    if (this.providerInstanceMap.has(token)) {
+      depInstance = this.providerInstanceMap.get(token);
+    } else {
+      depInstance = new (this.providerMap.get(token))();
+      this.providerInstanceMap.set(token, depInstance);
+    }
+    return depInstance;
+  }
+}
+
+const injection = new Injection();
+
+/**
+ * Injectable 类装饰器
+ */
+function Injectable() {
+  return function(target) {
+    // 下面考虑到 service 也许也会依赖其他的 service
+    const shouldMakeSubClass = target.length &gt; 0; // constructor 有参数的话，就需要注入
+
+    let injectableToRegiter;
+    if (shouldMakeSubClass) {
+      class Injected extends (target as any) {
+        constructor(...args) {
+          const dependencyInstances = params.map(token =&gt;
+            injection.getProviderInstance(token)
+          );
+          super(...args, ...dependencyInstances);
+        }
+      }
+      injectableToRegiter = Injected;
+    } else {
+      injectableToRegiter = target;
+    }
+
+    const params: any[] =
+      Reflect.getMetadata(&quot;design:paramtypes&quot;, target) || [];
+    injection.registerParamTypes(injectableToRegiter, params);
+
+    // 注册 provider
+    injection.registerProvider(target, injectableToRegiter);
+    if (target !== injectableToRegiter) {
+      injection.registerProvider(injectableToRegiter, injectableToRegiter);
+    }
+
+    return injectableToRegiter;
+  };
+}
+
+/**
+ * React.Component 的类装饰器
+ */
+function InjectComponent() {
+  return function&lt;T&gt;(target: T) {
+    // React Component constructor 的前两个参数已固定，注入的服务只能在后面
+    const params: any[] =
+      Reflect.getMetadata(&quot;design:paramtypes&quot;, target).slice(2) || [];
+
+    const oldConstructor = target.constructor;
+
+    class InjectedComponent extends (target as any) {
+      static displayName = `${(oldConstructor as any).displayName ||
+        oldConstructor.name})`;
+      constructor(...args) {
+        const dependencyInstances = params.map(token =&gt;
+          injection.getProviderInstance(token)
+        );
+        super(...args, ...dependencyInstances);
+      }
+    }
+
+    return (InjectedComponent as unknown) as T;
+  };
+}
+
+</code></pre></div><p>以上示例中全局只有一个 injection，然而有时在不同场景（命名空间）下我们希望有不同的 provider 实例，甚至还有可能希望 provider 也有一个生命周期跟某个scope绑定起来（在前端项目中，例如每个页面算一个 scope ?)，离开这个 scope 时 执行 provider.dispose() 之类的销毁逻辑。</p><p>Hierarchical injector，分层的注入器，使用的是 Angular 里的术语，简单地说是 injector 是可以有多层的，每一层可以选择性地覆盖掉部分之前层的实现。一个很实用的场景就是在组件树中从某一个节点开始开始替换掉部分实现，实际查找的时候有一个 lookup 的过程，很灵活。</p><h2 id="react-体系中还需要这套东西么？" tabindex="-1">React 体系中还需要这套东西么？ <a class="header-anchor" href="#react-体系中还需要这套东西么？" aria-hidden="true">#</a></h2><h3 id="有-context-呀" tabindex="-1">有 Context 呀 <a class="header-anchor" href="#有-context-呀" aria-hidden="true">#</a></h3><p>React 中有一种概念是 Context，算是一种简单的 DI 实现，能够比较好地满足在组件树中共享状态或服务的需求。不过当有多种 Context 的时候，Context.Provider 需要嵌套写，代码观感很差。</p><p>而且 Context 会深入参与 React 的 Reconciliation 过程，因此一般来说使用 Context 共享的都是一些像是 Theme/I18n 之类的对于视图有直接重要影响的数据和服务。其他的各种形式的服务都扔进 Context 的话，可能会导致处理复杂化，影响性能。</p><h3 id="有-redux-呀" tabindex="-1">有 Redux 呀 <a class="header-anchor" href="#有-redux-呀" aria-hidden="true">#</a></h3><p>A Predictable State Container for JS Apps，从标语上来看，redux 是一个状态容器，react-redux 体现的是 UI 编程中的关注点分离，将 View 仅作为消费 State 的展示层，同时对于 State 的操作和更改都有迹可循。</p><p>但一般在复杂的前端业务系统中，更多的是将 Redux 作为 View Data 的存储。而怎么与后端交互、后端的数据模型如何转换成视图层模型等等我们称为 ==“业务逻辑”== 的代码，最好还是在一个单独的抽象层中，与视图层的选型隔离开来。而依赖注入，在业务逻辑的复用中，可以有一席之地。</p></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-fb8d84c6><div class="edit" data-v-fb8d84c6><div class="edit-link" data-v-fb8d84c6 data-v-1ed99556><!----></div></div><div class="updated" data-v-fb8d84c6><!----></div></footer><div class="next-and-prev-link" data-v-7eddb2c4 data-v-38ede35f><div class="container" data-v-38ede35f><div class="prev" data-v-38ede35f><a class="link" href="/tech/di/angular" data-v-38ede35f><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-prev" data-v-38ede35f><path d="M19,11H7.4l5.3-5.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-7,7c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.1,0.5,0,0.8c0.1,0.1,0.1,0.2,0.2,0.3l7,7c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L7.4,13H19c0.6,0,1-0.4,1-1S19.6,11,19,11z"></path></svg><span class="text" data-v-38ede35f>Angular 的依赖注入</span></a></div><div class="next" data-v-38ede35f><!----></div></div></div><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"about_index.md\":\"ca39a1f6\",\"index.md\":\"6375263e\",\"tech_di_about.md\":\"86281301\",\"tech_di_angular.md\":\"dc4db69b\",\"tech_di_inversify.md\":\"4fc99ea9\",\"tech_di_react.md\":\"b9125f56\",\"tech_index.md\":\"5b149a1c\"}")</script>
+    <script type="module" async src="/assets/app.3dcb67ef.js"></script>
+    
+  </body>
+</html>

@@ -5,16 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "vitepress dev src",
-    "build": "vitepress build src",
     "pd": "npm run pp && npm run pb && npm run pc",
     "pp": "git reset --hard && git pull && npm install",
     "pc": "git add . && git commit -m 'deploy' && git push",
-    "pb": "rm -rf docs && vuepress build src"
+    "pb": "rm -rf docs && vitepress build src && mv src/.vitepress/dist docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^0.21.6"
+    "vitepress": "^0.21.6",
+    "vue": "^3.2.29"
   }
 }
