@@ -17,17 +17,18 @@ module.exports = {
     docsBranch: 'main',
     nav: [
       { text: '技术文章', link: '/tech/' },
+      { text: '管理笔记', link: '/manage/' },
       { text: '关于小编', link: '/about/' },
       {
         text: '常用网址',
         items: [
           {
             text: '知乎',
-            link: 'https://juejin.cn/'
+            link: 'https://www.zhihu.com/'
           },
           {
             text: '掘金',
-            link: 'https://www.zhihu.com/'
+            link: 'https://juejin.cn/'
           },
           {
             text: 'vue官网',
@@ -58,7 +59,7 @@ module.exports = {
     ],
     sidebar: {
       '/about': 'auto',
-      '/': [
+      '/tech': [
         {
           text: '技术调研',
           children: [
@@ -90,6 +91,26 @@ module.exports = {
             {
               text: 'TS实现可在React中使用的DI',
               link: '/tech/di/react'
+            },
+          ]
+        },
+      ],
+      '/manage': [
+        {
+          text: '理论指导',
+          children: [
+            {
+              text: '管理者管什么？',
+              link: '/manage/index'
+            },
+          ]
+        },
+        {
+          text: '实践总结',
+          children: [
+            {
+              text: '近期管理的认知迭代',
+              link: '/manage/sum'
             },
           ]
         },
