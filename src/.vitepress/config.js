@@ -66,6 +66,10 @@ module.exports = {
               text: '22年大前端热点技术',
               link: '/tech/'
             },
+            {
+              text: '物联网常见协议',
+              link: '/tech/iot'
+            },
           ]
         },
         {
