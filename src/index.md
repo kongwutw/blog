@@ -5,7 +5,7 @@ actionText: 热点技术
 actionLink: /tech/
 
 altActionText: 关于小编
-altActionLink: /about
+altActionLink: /about/
 
 features:
 - title: 正直
