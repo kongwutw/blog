@@ -75,6 +75,10 @@ module.exports = {
               text: '深入看透低代码',
               link: '/tech/low'
             },
+            {
+              text: '边缘计算与端智能',
+              link: '/tech/edge'
+            },
           ]
         },
         {
