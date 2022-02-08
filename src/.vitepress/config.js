@@ -71,6 +71,10 @@ module.exports = {
               text: '物联网常见协议',
               link: '/tech/iot'
             },
+            {
+              text: '深入看透低代码',
+              link: '/tech/low'
+            },
           ]
         },
         {
