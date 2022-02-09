@@ -100,6 +100,10 @@ module.exports = {
               text: 'TS实现可在React中使用的DI',
               link: '/tech/di/react'
             },
+            {
+              text: 'React 和 Vue 中的 Hooks 对比',
+              link: '/tech/di/hooks'
+            },
           ]
         },
       ],
