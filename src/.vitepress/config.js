@@ -68,6 +68,10 @@ module.exports = {
               link: '/tech/'
             },
             {
+              text: '关于前端基建的思考',
+              link: '/tech/base'
+            },
+            {
               text: '物联网常见协议',
               link: '/tech/iot'
             },
