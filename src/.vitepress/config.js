@@ -120,6 +120,15 @@ module.exports = {
       ],
       '/tech': [
         {
+          text: '效能提升',
+          children: [
+            {
+              text: '快速落地WebIDE',
+              link: '/tech/tool/theia'
+            },
+          ]
+        },
+        {
           text: '技术调研',
           children: [
             {
