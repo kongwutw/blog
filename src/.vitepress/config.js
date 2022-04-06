@@ -9,8 +9,8 @@ module.exports = {
   "lang": "zh-cn",
   outDir: '../docs',
   base:'/blog/',
-  title: '空无',
-  description: '让全栈编程更容易~',
+  title: '三一习惯',
+  description: '每周跑一十公里强体魄，每周读一本好书启智慧，每周做一次公益得快乐~',
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }]],
   themeConfig: {
     repo: 'kongwutw/blog',
