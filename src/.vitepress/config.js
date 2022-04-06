@@ -277,6 +277,10 @@ module.exports = {
               text: '管理者管什么？',
               link: '/manage/index'
             },
+            {
+              text: '如何写好技术文章',
+              link: '/manage/write'
+            },
           ]
         },
         {
