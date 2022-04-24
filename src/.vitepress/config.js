@@ -281,6 +281,19 @@ module.exports = {
               text: '如何写好技术文章',
               link: '/manage/write'
             },
+            {
+              text: '如何搞团建',
+              link: '/manage/tb'
+            },
+          ]
+        },
+        {
+          text: '读书笔记',
+          children: [
+            {
+              text: '拆掉思维里的墙',
+              link: '/manage/wall'
+            },
           ]
         },
         {
