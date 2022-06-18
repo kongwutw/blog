@@ -2,6 +2,9 @@ module.exports = [
     {
       text: '图形学',
       children: [{
+        text: '元宇宙的关键技术和未来展望',
+        link: '/tech/graphic/meta'
+      }, {
         text: '如何自学图形学',
         link: '/tech/graphic/plan'
       }, {
