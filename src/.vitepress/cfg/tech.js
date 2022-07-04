@@ -10,6 +10,9 @@ module.exports = [
       }, {
         text: '图形学发展趋势',
         link: '/tech/graphic/research'
+      }, {
+        text: '数字虚拟人',
+        link: '/tech/graphic/digitalman'
       }]
     },
     {
