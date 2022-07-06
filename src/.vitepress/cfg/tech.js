@@ -13,6 +13,9 @@ module.exports = [
       }, {
         text: '数字虚拟人',
         link: '/tech/graphic/digitalman'
+      }, {
+        text: '三维重建',
+        link: '/tech/graphic/3d_rebuild'
       }]
     },
     {
